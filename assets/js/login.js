@@ -30,7 +30,7 @@ $(function () {
             }
         }
     })
-    注册
+    // 注册
     $("#regs").on('submit', function (e) {
         e.preventDefault()
         $.ajax({
@@ -64,7 +64,7 @@ $(function () {
             data: logins,
             type: 'post',
             success: function (res) {
-                console.log(res);
+                console.log(res,'......');
                 if(res.status!==0){
                     return layer.msg(res.message)
                 }

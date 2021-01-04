@@ -1,0 +1,11 @@
+body,
+html {
+    padding: 10px;
+
+}
+
+#panel {
+    
+    height: 300px;
+    background-color: #ccc;
+}
