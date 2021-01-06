@@ -41,7 +41,7 @@ $(function () {
             },
             type: 'post',
             success: function (res) {
-                console.log(res);
+                console.log(res,'............................................');
                 if (res.status !== 0) {
                     return layer.msg(res.message)
                 }
@@ -64,12 +64,12 @@ $(function () {
             data: logins,
             type: 'post',
             success: function (res) {
-                console.log(res,'......');
+                console.log(res,'....kkk..');
                 if(res.status!==0){
                     return layer.msg(res.message)
                 }
                 layer.msg('登录成功')
-                localStorage.setItem('token','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZC…jY5fQ.6WFtkHvr00YlQ2sD1LEdGpJGSmbvwgYHK_H_qe8geOw')
+                localStorage.setItem('token',res.token)
                 location.href='/index.html'
             }
         })

@@ -49,21 +49,30 @@ $(function () {
                 height: 100
             })
             .toDataURL('image/png')
-            // 发送Ajax请求
-            $.ajax({
-                url:'/my/update/avatar',
-                type:'post',
-                data:{
-                    avatar:dataURL
-                },
-                success:function(res){
-                    if(res.status!==0){
-                     return layer.msg('更新失败')
-                    }
-                    layer.msg('替换成功')
-                    window.location.onload()
-                    window.parent.user_info()
+        // 发送Ajax请求
+        $.ajax({
+            url: '/my/update/avatar',
+            type: 'post',
+            data: {
+                avatar: dataURL
+            },
+
+
+            success: function (res) {
+                console.log(res);
+                if (res.status !== 0) {
+                    return layer.msg('更新失败')
                 }
-            })
+                layer.msg('替换成功')
+                // window.location.reload()
+                window.parent.fun()
+            }
+        })
     })
 })
+// $(function(){
+
+
+
+
+// })
